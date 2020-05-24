@@ -4,7 +4,7 @@ from flask_migrate import Migrate
 import sys
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://anupam:anupam@localhost:5432/todoapp'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://anupam:password@localhost:5432/todoapp'
 db = SQLAlchemy(app)
 
 migrate = Migrate(app,db)
@@ -13,7 +13,7 @@ migrate = Migrate(app,db)
 # CREATE USER/ROLE ANUPAM SUPERUSER WITH PASSWORD "";
 #\du display user
 #\h query to help
-#ALTER ROLE anupam WITH ENCRYPTED PASSWORD "anupam";
+#ALTER ROLE anupam WITH ENCRYPTED PASSWORD "";
 #\c - <username> change 
 #\c <dbname> change
 class Todo(db.Model):
